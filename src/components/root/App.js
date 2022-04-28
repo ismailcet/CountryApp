@@ -1,7 +1,10 @@
+import Countries from "../countries/Countries";
+
 function App() {
   return (
     <div>
-      <h1>Deneme</h1>
+      <h1>Countries</h1>
+      <Countries></Countries>
     </div>
   );
 }
