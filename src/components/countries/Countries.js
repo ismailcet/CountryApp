@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as countryAction from "../../redux/actions/countryAction";
+import "./Countries.css";
 
 class Countries extends Component {
   componentDidMount() {
@@ -9,11 +10,10 @@ class Countries extends Component {
   }
 
   render() {
-    console.log(this.props.countries.data[1]);
     return (
       <div className="countries">
         {this.props.countries.data.map((country) => (
-          <div className="card" key={country}>
+          <div className="card" key={country.name}>
             <img
               src={country.flags.svg}
               alt={country.name}
