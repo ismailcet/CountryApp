@@ -8,8 +8,8 @@ function App() {
       <Navbar></Navbar>
       <main>
         <Header></Header>
+        <Countries></Countries>
       </main>
-      {/* <Countries></Countries> */}
     </div>
   );
 }

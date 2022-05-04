@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as countryAction from "../../redux/actions/countryAction";
+import { useEffect } from "react";
 import "./Countries.css";
 
 class Countries extends Component {
@@ -12,17 +13,15 @@ class Countries extends Component {
   render() {
     return (
       <div className="countries">
-        {this.props.countries.data.map((country) => (
+        {this.props.countries.map((country) => (
           <div className="card" key={country.name}>
-            <img
-              src={country.flags.svg}
-              alt={country.name}
-              style={{ width: "200px" }}
-            />
-            <h3 className="countryName">{country.name}</h3>
-            <p className="countryCapital">{country.capital}</p>
-            <p className="countryPopulation">{country.population}</p>
-            <p className="countryRegion">{country.region}</p>
+            <img src={country.flags.svg} alt={country.name} />
+            <div className="info">
+              <h3 className="countryName">{country.name}</h3>
+              <p className="countryCapital">{country.capital}</p>
+              <p className="countryPopulation">{country.population}</p>
+              <p className="countryRegion">{country.region}</p>
+            </div>
           </div>
         ))}
       </div>

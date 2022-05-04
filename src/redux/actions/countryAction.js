@@ -7,8 +7,8 @@ export function getCountriesSuccess(countries) {
 export function getCountries() {
   return function (dispatch) {
     let url = "https://restcountries.com/v2/all";
-    return axios
-      .get(url)
+    return fetch(url)
+      .then((response) => response.json())
       .then((result) => dispatch(getCountriesSuccess(result)));
   };
 }
